@@ -11,14 +11,14 @@ class ViewController: UIViewController {
     var viewModel: ViewModel = ViewModel()
     private var cornerRadius: CGFloat = 6
 // MARK: - Outlets
-    @IBOutlet weak var yearTextField: UITextField!
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var addButtonOutlet: UIButton! {
+    @IBOutlet private weak var yearTextField: UITextField!
+    @IBOutlet private weak var titleTextField: UITextField!
+    @IBOutlet private weak var addButtonOutlet: UIButton! {
         didSet {
             addButtonOutlet.layer.cornerRadius = cornerRadius
         }
     }
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
 // MARK: - Action
     @IBAction func addButtonAction(_ sender: Any) {
         viewModel.writeData(movie: Movie(
