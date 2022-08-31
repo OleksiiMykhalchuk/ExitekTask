@@ -23,6 +23,16 @@ class ViewController: UIViewController {
     }
 // MARK: - Action
     @IBAction func addButtonAction(_ sender: Any) {
+        guard Int(yearTextField.text ?? "") != nil else {
+            self.showAlert("It is not an Integer")
+            yearTextField.addBorder()
+            return
+        }
+        guard yearTextField.text?.count == 4 else {
+            self.showAlert("Year is invalid please try again")
+            yearTextField.addBorder()
+            return
+        }
         viewModel.writeData(
             title: titleTextField.text ?? "",
             year: Int(yearTextField.text ?? "") ?? 0)
@@ -40,6 +50,7 @@ class ViewController: UIViewController {
             addButtonOutlet.isEnabled = true
             addButtonOutlet.alpha = 1
         }
+        yearTextField.layer.borderWidth = 0
     }
 }
 // MARK: - UITableViewDataSource

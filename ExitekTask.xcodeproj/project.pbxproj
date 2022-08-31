@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88A638FD28BFB0C100C3239C /* UIViewController+showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A638FC28BFB0C100C3239C /* UIViewController+showAlert.swift */; };
+		88A638FF28BFB55200C3239C /* UIView+addBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A638FE28BFB55200C3239C /* UIView+addBorder.swift */; };
 		88F1060A28BF808F00FFDE88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1060928BF808F00FFDE88 /* AppDelegate.swift */; };
 		88F1060C28BF808F00FFDE88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1060B28BF808F00FFDE88 /* SceneDelegate.swift */; };
 		88F1060E28BF808F00FFDE88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1060D28BF808F00FFDE88 /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88A638FC28BFB0C100C3239C /* UIViewController+showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+showAlert.swift"; sourceTree = "<group>"; };
+		88A638FE28BFB55200C3239C /* UIView+addBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBorder.swift"; sourceTree = "<group>"; };
 		88F1060628BF808F00FFDE88 /* ExitekTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExitekTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F1060928BF808F00FFDE88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88F1060B28BF808F00FFDE88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		88F1060828BF808F00FFDE88 /* ExitekTask */ = {
 			isa = PBXGroup;
 			children = (
+				88F1064328BFAFE900FFDE88 /* Extensions */,
 				88F1064028BFA7F200FFDE88 /* PersistentStorage */,
 				88F1060928BF808F00FFDE88 /* AppDelegate.swift */,
 				88F1060B28BF808F00FFDE88 /* SceneDelegate.swift */,
@@ -145,6 +150,15 @@
 				88F1064128BFA89F00FFDE88 /* DataBaseManager.swift */,
 			);
 			path = PersistentStorage;
+			sourceTree = "<group>";
+		};
+		88F1064328BFAFE900FFDE88 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				88A638FC28BFB0C100C3239C /* UIViewController+showAlert.swift */,
+				88A638FE28BFB55200C3239C /* UIView+addBorder.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,12 +293,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				88F1063D28BF8E9500FFDE88 /* ViewModel.swift in Sources */,
+				88A638FD28BFB0C100C3239C /* UIViewController+showAlert.swift in Sources */,
 				88F1061428BF808F00FFDE88 /* ExitekTask.xcdatamodeld in Sources */,
 				88F1060E28BF808F00FFDE88 /* ViewController.swift in Sources */,
 				88F1064228BFA89F00FFDE88 /* DataBaseManager.swift in Sources */,
 				88F1063F28BF8EE100FFDE88 /* Movie.swift in Sources */,
 				88F1060A28BF808F00FFDE88 /* AppDelegate.swift in Sources */,
 				88F1060C28BF808F00FFDE88 /* SceneDelegate.swift in Sources */,
+				88A638FF28BFB55200C3239C /* UIView+addBorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
