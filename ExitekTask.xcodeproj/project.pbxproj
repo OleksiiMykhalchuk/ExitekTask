@@ -18,7 +18,7 @@
 		88F1062E28BF809100FFDE88 /* ExitekTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1062D28BF809100FFDE88 /* ExitekTaskUITests.swift */; };
 		88F1063028BF809100FFDE88 /* ExitekTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1062F28BF809100FFDE88 /* ExitekTaskUITestsLaunchTests.swift */; };
 		88F1063D28BF8E9500FFDE88 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1063C28BF8E9500FFDE88 /* ViewModel.swift */; };
-		88F1063F28BF8EE100FFDE88 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1063E28BF8EE100FFDE88 /* Model.swift */; };
+		88F1063F28BF8EE100FFDE88 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1063E28BF8EE100FFDE88 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		88F1062D28BF809100FFDE88 /* ExitekTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitekTaskUITests.swift; sourceTree = "<group>"; };
 		88F1062F28BF809100FFDE88 /* ExitekTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitekTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		88F1063C28BF8E9500FFDE88 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		88F1063E28BF8EE100FFDE88 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		88F1063E28BF8EE100FFDE88 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 				88F1060B28BF808F00FFDE88 /* SceneDelegate.swift */,
 				88F1060D28BF808F00FFDE88 /* ViewController.swift */,
 				88F1063C28BF8E9500FFDE88 /* ViewModel.swift */,
-				88F1063E28BF8EE100FFDE88 /* Model.swift */,
+				88F1063E28BF8EE100FFDE88 /* Movie.swift */,
 				88F1060F28BF808F00FFDE88 /* Main.storyboard */,
 				88F1061528BF809100FFDE88 /* Assets.xcassets */,
 				88F1061728BF809100FFDE88 /* LaunchScreen.storyboard */,
@@ -270,7 +270,7 @@
 				88F1063D28BF8E9500FFDE88 /* ViewModel.swift in Sources */,
 				88F1061428BF808F00FFDE88 /* ExitekTask.xcdatamodeld in Sources */,
 				88F1060E28BF808F00FFDE88 /* ViewController.swift in Sources */,
-				88F1063F28BF8EE100FFDE88 /* Model.swift in Sources */,
+				88F1063F28BF8EE100FFDE88 /* Movie.swift in Sources */,
 				88F1060A28BF808F00FFDE88 /* AppDelegate.swift in Sources */,
 				88F1060C28BF808F00FFDE88 /* SceneDelegate.swift in Sources */,
 			);

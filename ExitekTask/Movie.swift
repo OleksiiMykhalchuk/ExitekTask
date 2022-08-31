@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Model {
+struct Movie {
     let title: String
     let year: Int
 }

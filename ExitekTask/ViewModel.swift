@@ -9,12 +9,12 @@ import Foundation
 
 extension ViewController {
     final class ViewModel {
-        var movies: [Model] = []
+        var movies: [Movie] = []
 
-        func writeData(movie: Model) {
+        func writeData(movie: Movie) {
             movies.insert(movie, at: 0)
         }
-        subscript (index: Int) -> Model {
+        subscript (index: Int) -> Movie {
             return movies[index]
         }
     }

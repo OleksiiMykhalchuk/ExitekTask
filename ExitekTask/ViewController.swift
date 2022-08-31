@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 // MARK: - Action
     @IBAction func addButtonAction(_ sender: Any) {
-        viewModel.writeData(movie: Model(
+        viewModel.writeData(movie: Movie(
             title: titleTextField.text ?? "",
             year: Int(yearTextField.text ?? "") ?? 0))
         let indexPath = IndexPath(row: 0, section: 0)
