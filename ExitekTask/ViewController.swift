@@ -35,8 +35,8 @@ class ViewController: UIViewController {
         }
         viewModel.writeData(
             title: titleTextField.text ?? "",
-            year: Int(yearTextField.text ?? "") ?? 0) { message in
-                self.showAlert(message)
+            year: Int(yearTextField.text ?? "") ?? 0) { error in
+                self.showAlert(error.description)
             }
         
     }

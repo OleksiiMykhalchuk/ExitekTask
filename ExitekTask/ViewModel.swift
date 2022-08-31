@@ -11,12 +11,21 @@ extension ViewController {
     final class ViewModel {
         var didUpdate: (() -> Void)?
         private var movies: [Movie] = []
-
-        func writeData(title: String, year: Int, onError: (String) -> Void) {
+        enum DataError: Error {
+            case isExist(String)
+            
+            var description: String {
+                switch self {
+                case .isExist(let message):
+                    return message
+                }
+            }
+        }
+        func writeData(title: String, year: Int, onError: (DataError) -> Void) {
             let movie = Movie(id: UUID().uuidString, title: title, year: year)
             let isExists = movies.contains { $0.title == movie.title && $0.year == movie.year }
             if isExists {
-                onError("The Movie exists. Try again")
+                onError(DataError.isExist("The Movie exists. Try again."))
                 return
             }
             movies.insert(movie, at: 0)
