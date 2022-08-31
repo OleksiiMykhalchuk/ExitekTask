@@ -21,6 +21,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 // MARK: - Action
     @IBAction func addButtonAction(_ sender: Any) {
+        viewModel.writeData(movie: Model(
+            title: titleTextField.text ?? "",
+            year: 1977))
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.insertRows(at: [indexPath], with: .bottom)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +36,12 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "default")
-        cell.textLabel?.text = "Movie Title Year"
+        let title = viewModel[indexPath.row].title
+        let year = viewModel[indexPath.row].year
+        cell.textLabel?.text = "\(title) \(year)"
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return viewModel.movies.count
     }
 }
