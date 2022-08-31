@@ -18,6 +18,7 @@
 		88F1062E28BF809100FFDE88 /* ExitekTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1062D28BF809100FFDE88 /* ExitekTaskUITests.swift */; };
 		88F1063028BF809100FFDE88 /* ExitekTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1062F28BF809100FFDE88 /* ExitekTaskUITestsLaunchTests.swift */; };
 		88F1063D28BF8E9500FFDE88 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1063C28BF8E9500FFDE88 /* ViewModel.swift */; };
+		88F1063F28BF8EE100FFDE88 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1063E28BF8EE100FFDE88 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		88F1062D28BF809100FFDE88 /* ExitekTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitekTaskUITests.swift; sourceTree = "<group>"; };
 		88F1062F28BF809100FFDE88 /* ExitekTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitekTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		88F1063C28BF8E9500FFDE88 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		88F1063E28BF8EE100FFDE88 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				88F1061A28BF809100FFDE88 /* Info.plist */,
 				88F1061228BF808F00FFDE88 /* ExitekTask.xcdatamodeld */,
 				88F1063C28BF8E9500FFDE88 /* ViewModel.swift */,
+				88F1063E28BF8EE100FFDE88 /* Model.swift */,
 			);
 			path = ExitekTask;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				88F1063D28BF8E9500FFDE88 /* ViewModel.swift in Sources */,
 				88F1061428BF808F00FFDE88 /* ExitekTask.xcdatamodeld in Sources */,
 				88F1060E28BF808F00FFDE88 /* ViewController.swift in Sources */,
+				88F1063F28BF8EE100FFDE88 /* Model.swift in Sources */,
 				88F1060A28BF808F00FFDE88 /* AppDelegate.swift in Sources */,
 				88F1060C28BF808F00FFDE88 /* SceneDelegate.swift in Sources */,
 			);
