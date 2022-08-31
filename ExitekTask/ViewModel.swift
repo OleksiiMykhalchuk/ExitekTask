@@ -9,10 +9,13 @@ import Foundation
 
 extension ViewController {
     final class ViewModel {
-        var movies: [Movie] = []
+        private var movies: [Movie] = []
 
         func writeData(movie: Movie) {
             movies.insert(movie, at: 0)
+        }
+        func getCount() -> Int {
+            movies.count
         }
         subscript (index: Int) -> Movie {
             return movies[index]

@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Movie {
+struct Movie: CustomStringConvertible {
+    var description: String
+    
     let title: String
     let year: Int
 }

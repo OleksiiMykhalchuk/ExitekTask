@@ -9,21 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
     var viewModel: ViewModel = ViewModel()
-    private var cornerRadius: CGFloat = 6
 // MARK: - Outlets
     @IBOutlet private weak var yearTextField: UITextField!
     @IBOutlet private weak var titleTextField: UITextField!
-    @IBOutlet private weak var addButtonOutlet: UIButton! {
-        didSet {
-            addButtonOutlet.layer.cornerRadius = cornerRadius
-        }
-    }
+    @IBOutlet private weak var addButtonOutlet: UIButton!
     @IBOutlet private weak var tableView: UITableView!
 // MARK: - Action
     @IBAction func addButtonAction(_ sender: Any) {
-        viewModel.writeData(movie: Movie(
-            title: titleTextField.text ?? "",
-            year: Int(yearTextField.text ?? "") ?? 0))
+
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .bottom)
     }
@@ -36,12 +29,10 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "default")
-        let title = viewModel[indexPath.row].title
-        let year = viewModel[indexPath.row].year
-        cell.textLabel?.text = "\(title) \(year)"
+        cell.textLabel?.text = "\(viewModel[indexPath.row])"
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.movies.count
+        return viewModel.getCount()
     }
 }
