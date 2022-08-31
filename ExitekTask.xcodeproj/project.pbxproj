@@ -19,6 +19,7 @@
 		88F1063028BF809100FFDE88 /* ExitekTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1062F28BF809100FFDE88 /* ExitekTaskUITestsLaunchTests.swift */; };
 		88F1063D28BF8E9500FFDE88 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1063C28BF8E9500FFDE88 /* ViewModel.swift */; };
 		88F1063F28BF8EE100FFDE88 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1063E28BF8EE100FFDE88 /* Movie.swift */; };
+		88F1064228BFA89F00FFDE88 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1064128BFA89F00FFDE88 /* DataBaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		88F1062F28BF809100FFDE88 /* ExitekTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitekTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		88F1063C28BF8E9500FFDE88 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		88F1063E28BF8EE100FFDE88 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		88F1064128BFA89F00FFDE88 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		88F1060828BF808F00FFDE88 /* ExitekTask */ = {
 			isa = PBXGroup;
 			children = (
+				88F1064028BFA7F200FFDE88 /* PersistentStorage */,
 				88F1060928BF808F00FFDE88 /* AppDelegate.swift */,
 				88F1060B28BF808F00FFDE88 /* SceneDelegate.swift */,
 				88F1060D28BF808F00FFDE88 /* ViewController.swift */,
@@ -134,6 +137,14 @@
 				88F1062F28BF809100FFDE88 /* ExitekTaskUITestsLaunchTests.swift */,
 			);
 			path = ExitekTaskUITests;
+			sourceTree = "<group>";
+		};
+		88F1064028BFA7F200FFDE88 /* PersistentStorage */ = {
+			isa = PBXGroup;
+			children = (
+				88F1064128BFA89F00FFDE88 /* DataBaseManager.swift */,
+			);
+			path = PersistentStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +281,7 @@
 				88F1063D28BF8E9500FFDE88 /* ViewModel.swift in Sources */,
 				88F1061428BF808F00FFDE88 /* ExitekTask.xcdatamodeld in Sources */,
 				88F1060E28BF808F00FFDE88 /* ViewController.swift in Sources */,
+				88F1064228BFA89F00FFDE88 /* DataBaseManager.swift in Sources */,
 				88F1063F28BF8EE100FFDE88 /* Movie.swift in Sources */,
 				88F1060A28BF808F00FFDE88 /* AppDelegate.swift in Sources */,
 				88F1060C28BF808F00FFDE88 /* SceneDelegate.swift in Sources */,
