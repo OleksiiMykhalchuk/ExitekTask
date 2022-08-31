@@ -33,6 +33,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Add">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mMC-fb-M96"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kvl-bC-zSA">
                                 <rect key="frame" x="10" y="139" width="355" height="518"/>
@@ -56,6 +59,12 @@
                             <constraint firstItem="Sv6-6W-z8h" firstAttribute="top" secondItem="8Ak-EE-GuW" secondAttribute="bottom" constant="10" id="tla-wS-MT3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addButtonOutlet" destination="zcE-lh-Rqj" id="94r-Dd-gQq"/>
+                        <outlet property="tableView" destination="kvl-bC-zSA" id="n7C-WE-UDi"/>
+                        <outlet property="titleTextField" destination="8Ak-EE-GuW" id="e7o-gF-wW5"/>
+                        <outlet property="yearTextField" destination="Sv6-6W-z8h" id="LBW-vy-CNw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
