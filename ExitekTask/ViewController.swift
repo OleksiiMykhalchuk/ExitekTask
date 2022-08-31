@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 // MARK: - Action
     @IBAction func addButtonAction(_ sender: Any) {
-
+        
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .bottom)
     }
@@ -28,7 +28,8 @@ class ViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "default")
+        let _ = UITableViewCell(style: .default, reuseIdentifier: "movie")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movie", for: indexPath)
         cell.textLabel?.text = "\(viewModel[indexPath.row])"
         return cell
     }
