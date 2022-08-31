@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: CustomStringConvertible {
+struct Movie: CustomStringConvertible, Identifiable {
     var description: String {
         return "\(title) \(year)"
     }

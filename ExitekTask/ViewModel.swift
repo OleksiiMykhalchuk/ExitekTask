@@ -9,12 +9,13 @@ import Foundation
 
 extension ViewController {
     final class ViewModel {
+        var didUpdate: (() -> Void)?
         private var movies: [Movie] = []
 
-        func writeData(title: String, year: Int, completion: () -> Void) {
+        func writeData(title: String, year: Int) {
             let movie = Movie(id: UUID().uuidString, title: title, year: year)
             movies.insert(movie, at: 0)
-            completion()
+            didUpdate?()
         }
         func getCount() -> Int {
             movies.count

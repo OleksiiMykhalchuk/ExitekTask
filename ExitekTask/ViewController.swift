@@ -13,15 +13,19 @@ class ViewController: UIViewController {
     @IBOutlet private weak var yearTextField: UITextField!
     @IBOutlet private weak var titleTextField: UITextField!
     @IBOutlet private weak var addButtonOutlet: UIButton!
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            viewModel.didUpdate = {
+                let indexPath = IndexPath(row: 0, section: 0)
+                self.tableView.insertRows(at: [indexPath], with: .bottom)
+            }
+        }
+    }
 // MARK: - Action
     @IBAction func addButtonAction(_ sender: Any) {
         viewModel.writeData(
             title: titleTextField.text ?? "",
-            year: Int(yearTextField.text ?? "") ?? 0) {
-            let indexPath = IndexPath(row: 0, section: 0)
-            tableView.insertRows(at: [indexPath], with: .bottom)
-        }
+            year: Int(yearTextField.text ?? "") ?? 0)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +36,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movie", for: indexPath)
-        cell.textLabel?.text = "\(viewModel[indexPath.row].description)"
+        cell.textLabel?.text = "\(viewModel[indexPath.row])"
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
