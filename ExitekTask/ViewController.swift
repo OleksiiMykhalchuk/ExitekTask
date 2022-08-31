@@ -9,12 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     var viewModel: ViewModel = ViewModel()
+    private var cornerRadius: CGFloat = 6
 
     @IBOutlet weak var yearTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addButtonOutlet: UIButton! {
         didSet {
-            addButtonOutlet.layer.cornerRadius = 6
+            addButtonOutlet.layer.cornerRadius = cornerRadius
         }
     }
     @IBOutlet weak var tableView: UITableView!
