@@ -8,8 +8,10 @@
 import Foundation
 
 struct Movie: CustomStringConvertible {
-    var description: String
-    
+    var description: String {
+        return "\(title) \(year)"
+    }
+    let id: String
     let title: String
     let year: Int
 }

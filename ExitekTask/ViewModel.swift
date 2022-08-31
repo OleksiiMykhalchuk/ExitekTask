@@ -11,8 +11,10 @@ extension ViewController {
     final class ViewModel {
         private var movies: [Movie] = []
 
-        func writeData(movie: Movie) {
+        func writeData(title: String, year: Int, completion: () -> Void) {
+            let movie = Movie(id: UUID().uuidString, title: title, year: year)
             movies.insert(movie, at: 0)
+            completion()
         }
         func getCount() -> Int {
             movies.count
