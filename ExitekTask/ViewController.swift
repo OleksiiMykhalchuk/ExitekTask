@@ -30,6 +30,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextField.textDidChangeNotification, object: nil)
+    }
+    @objc func textDidChange() {
+        if titleTextField.text == "" || yearTextField.text == "" {
+            addButtonOutlet.isEnabled = false
+            addButtonOutlet.alpha = 0.3
+        } else {
+            addButtonOutlet.isEnabled = true
+            addButtonOutlet.alpha = 1
+        }
     }
 }
 // MARK: - UITableViewDataSource
