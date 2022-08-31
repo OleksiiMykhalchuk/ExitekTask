@@ -35,7 +35,10 @@ class ViewController: UIViewController {
         }
         viewModel.writeData(
             title: titleTextField.text ?? "",
-            year: Int(yearTextField.text ?? "") ?? 0)
+            year: Int(yearTextField.text ?? "") ?? 0) { message in
+                self.showAlert(message)
+            }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,8 +12,13 @@ extension ViewController {
         var didUpdate: (() -> Void)?
         private var movies: [Movie] = []
 
-        func writeData(title: String, year: Int) {
+        func writeData(title: String, year: Int, onError: (String) -> Void) {
             let movie = Movie(id: UUID().uuidString, title: title, year: year)
+            let isExists = movies.contains { $0.title == movie.title && $0.year == movie.year }
+            if isExists {
+                onError("The Movie exists. Try again")
+                return
+            }
             movies.insert(movie, at: 0)
             didUpdate?()
         }
