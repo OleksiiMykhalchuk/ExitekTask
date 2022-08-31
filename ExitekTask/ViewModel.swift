@@ -8,7 +8,7 @@
 import Foundation
 
 extension ViewController {
-    class ViewModel {
+    final class ViewModel {
         
     }
 }

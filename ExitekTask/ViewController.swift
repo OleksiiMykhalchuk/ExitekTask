@@ -12,7 +12,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var yearTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var addButtonOutlet: UIButton!
+    @IBOutlet weak var addButtonOutlet: UIButton! {
+        didSet {
+            addButtonOutlet.layer.cornerRadius = 6
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
 
     @IBAction func addButtonAction(_ sender: Any) {
@@ -21,7 +25,4 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
-
