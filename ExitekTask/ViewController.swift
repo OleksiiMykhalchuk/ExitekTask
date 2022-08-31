@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     @IBAction func addButtonAction(_ sender: Any) {
         viewModel.writeData(movie: Model(
             title: titleTextField.text ?? "",
-            year: 1977))
+            year: Int(yearTextField.text ?? "") ?? 0))
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .bottom)
     }
