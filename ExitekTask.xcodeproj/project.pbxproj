@@ -108,13 +108,13 @@
 				88F1060928BF808F00FFDE88 /* AppDelegate.swift */,
 				88F1060B28BF808F00FFDE88 /* SceneDelegate.swift */,
 				88F1060D28BF808F00FFDE88 /* ViewController.swift */,
+				88F1063C28BF8E9500FFDE88 /* ViewModel.swift */,
+				88F1063E28BF8EE100FFDE88 /* Model.swift */,
 				88F1060F28BF808F00FFDE88 /* Main.storyboard */,
 				88F1061528BF809100FFDE88 /* Assets.xcassets */,
 				88F1061728BF809100FFDE88 /* LaunchScreen.storyboard */,
 				88F1061A28BF809100FFDE88 /* Info.plist */,
 				88F1061228BF808F00FFDE88 /* ExitekTask.xcdatamodeld */,
-				88F1063C28BF8E9500FFDE88 /* ViewModel.swift */,
-				88F1063E28BF8EE100FFDE88 /* Model.swift */,
 			);
 			path = ExitekTask;
 			sourceTree = "<group>";
