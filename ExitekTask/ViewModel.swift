@@ -11,6 +11,7 @@ extension ViewController {
     final class ViewModel {
         var didUpdate: (() -> Void)?
         private var movies: [Movie] = []
+        private var persistantStorage: Persistable!
         enum DataError: Error {
             case isExist(String)
             
@@ -20,6 +21,9 @@ extension ViewController {
                     return message
                 }
             }
+        }
+        init(persistantStorage: Persistable) {
+            self.persistantStorage = persistantStorage
         }
         func writeData(title: String, year: Int, onError: (DataError) -> Void) {
             let movie = Movie(id: UUID().uuidString, title: title, year: year)
