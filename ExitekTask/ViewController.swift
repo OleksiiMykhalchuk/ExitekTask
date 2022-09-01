@@ -7,8 +7,16 @@
 
 import UIKit
 
+extension ViewController {
+    static func make(viewModel: ViewModel) -> UIViewController {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
+        viewController.viewModel = viewModel
+        return viewController
+    }
+}
+
 class ViewController: UIViewController {
-    var viewModel: ViewModel = ViewModel()
+    var viewModel: ViewModel!
 // MARK: - Outlets
     @IBOutlet private weak var yearTextField: UITextField!
     @IBOutlet private weak var titleTextField: UITextField!
