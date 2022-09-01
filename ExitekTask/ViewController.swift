@@ -63,8 +63,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        print("\(viewModel.applicationDocumentDirectory)")
-        viewModel.readData()
     }
 
     override func viewDidAppear(_ animated: Bool) {

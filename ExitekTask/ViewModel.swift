@@ -24,12 +24,6 @@ extension ViewController {
                 }
             }
         }
-        let applicationDocumentDirectory: URL = {
-            let paths = FileManager.default.urls(
-                for: .documentDirectory,
-                in: .allDomainsMask)
-            return paths[0]
-        }()
         init(persistantStorage: Persistable) {
             self.persistantStorage = persistantStorage
         }
@@ -80,12 +74,12 @@ extension ViewController {
             }
         }
         func readData() {
-            persistantStorage.fetchAll { result in
+            persistantStorage.fetchAll { [weak self] result in
                 switch result {
                 case .success(let movies):
-                    self.movies = movies
+                    self?.movies = movies
                 case .failure(let error):
-                    self.showError?(error.localizedDescription)
+                    self?.showError?(error.localizedDescription)
                 }
             }
         }
@@ -97,9 +91,5 @@ extension ViewController {
         subscript (index: Int) -> Movie {
             return movies[index]
         }
-        private func reloadMovie() {
-
-        }
-        
     }
 }
