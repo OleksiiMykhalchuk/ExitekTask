@@ -16,7 +16,7 @@ class DataBaseManager: Persistable {
     func fetchAll(completion: ((Result<[Movie], Error>) -> Void)) {
         //
     }
-    func add(_ movie: Movie, completion: ((Result<String, Error>) -> Void)) {
+    func add(_ movie: Movie, completion: ((Result<Void, Error>) -> Void)) {
         //
     }
 }
