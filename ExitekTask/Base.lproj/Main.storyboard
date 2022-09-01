@@ -20,11 +20,17 @@
                                 <rect key="frame" x="10" y="10" width="355" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="4ey-hd-6QP"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sv6-6W-z8h">
                                 <rect key="frame" x="10" y="54" width="355" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="Ppw-F8-Bpu"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcE-lh-Rqj">
                                 <rect key="frame" x="162.5" y="98" width="50" height="34"/>

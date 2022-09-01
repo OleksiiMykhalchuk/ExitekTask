@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         }
     }
 // MARK: - Action
-    @IBAction func addButtonAction(_ sender: Any) {
+    @IBAction private func addButtonAction(_ sender: Any) {
         guard Int(yearTextField.text ?? "") != nil else {
             self.showAlert("It is not an Integer")
             yearTextField.addBorder()
@@ -46,14 +46,8 @@ class ViewController: UIViewController {
             year: Int(yearTextField.text ?? "") ?? 0) { error in
                 self.showAlert(error.description)
             }
-        
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.dataSource = self
-        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextField.textDidChangeNotification, object: nil)
-    }
-    @objc func textDidChange() {
+    @IBAction private func textDidChange(_ sender: Any) {
         if titleTextField.text == "" || yearTextField.text == "" {
             addButtonOutlet.isEnabled = false
             addButtonOutlet.alpha = 0.3
@@ -62,6 +56,11 @@ class ViewController: UIViewController {
             addButtonOutlet.alpha = 1
         }
         yearTextField.layer.borderWidth = 0
+    }
+    // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
     }
 }
 // MARK: - UITableViewDataSource
