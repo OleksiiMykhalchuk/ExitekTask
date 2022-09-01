@@ -44,6 +44,9 @@ class ViewController: UIViewController {
         viewModel.writeData(
             title: titleTextField.text ?? "",
             year: Int(yearTextField.text ?? "") ?? 0)
+        yearTextField.text = ""
+        titleTextField.text = ""
+        view.endEditing(true)
     }
     @IBAction private func textDidChange(_ sender: Any) {
         if titleTextField.text == "" || yearTextField.text == "" {
