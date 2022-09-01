@@ -41,8 +41,9 @@ class ViewController: UIViewController {
             yearTextField.addBorder()
             return
         }
+        let trimmed = titleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         viewModel.writeData(
-            title: titleTextField.text ?? "",
+            title: trimmed ?? "",
             year: Int(yearTextField.text ?? "") ?? 0)
         yearTextField.text = ""
         titleTextField.text = ""
