@@ -24,6 +24,12 @@ extension ViewController {
                 }
             }
         }
+        let applicationDocumentDirectory: URL = {
+            let paths = FileManager.default.urls(
+                for: .documentDirectory,
+                in: .allDomainsMask)
+            return paths[0]
+        }()
         init(persistantStorage: Persistable) {
             self.persistantStorage = persistantStorage
         }
@@ -63,8 +69,6 @@ extension ViewController {
                 showError?(DataError.isExist("The Movie exists. Try again.").description)
                 return
             }
-            movies.insert(movie, at: 0)
-            didUpdateWithIndex?(0)
             persistantStorage.add(movie) { [weak self] result in
                 switch result {
                 case .success:
@@ -72,6 +76,16 @@ extension ViewController {
                     self?.didUpdateWithIndex?(0)
                 case .failure(let error):
                     self?.showError?(error.localizedDescription)
+                }
+            }
+        }
+        func readData() {
+            persistantStorage.fetchAll { result in
+                switch result {
+                case .success(let movies):
+                    self.movies = movies
+                case .failure(let error):
+                    self.showError?(error.localizedDescription)
                 }
             }
         }
@@ -86,5 +100,6 @@ extension ViewController {
         private func reloadMovie() {
 
         }
+        
     }
 }
