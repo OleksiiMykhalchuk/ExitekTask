@@ -28,22 +28,43 @@ extension ViewController {
             self.persistantStorage = persistantStorage
         }
 
+        func start() {
+            persistantStorage.fetchAll { [weak self] result in
+                switch result {
+                case .success(let movies):
+                    self?.movies = movies
+                    self?.didUpdate?()
+                case .failure(let error):
+                    self?.showError?(error.localizedDescription)
+                }
+            }
+        }
+
         func validateName(_ string: String) -> Bool {
             // check here
             return true
         }
 
         func validateYear(_ year: Int) -> Bool {
-            // check here
-            return true
+            if year == 0 {
+                showError?("Year is not integer!")
+                return false
+            } else if String(year).count != 4 {
+                showError?("Year is invalid. Try again.")
+                return false
+            } else {
+                return true
+            }
         }
-        func writeData(title: String, year: Int, onError: (DataError) -> Void) {
+        func writeData(title: String, year: Int) {
             let movie = Movie(id: UUID().uuidString, title: title, year: year)
             let isExists = movies.contains { $0.title == movie.title && $0.year == movie.year }
             guard !isExists else {
-                showError?(DataError.isExist("The Movie exists. Try again.").localizedDescription)
+                showError?(DataError.isExist("The Movie exists. Try again.").description)
                 return
             }
+            movies.insert(movie, at: 0)
+            didUpdateWithIndex?(0)
             persistantStorage.add(movie) { [weak self] result in
                 switch result {
                 case .success:

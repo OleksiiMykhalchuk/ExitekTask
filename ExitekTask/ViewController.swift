@@ -23,29 +23,27 @@ class ViewController: UIViewController {
     @IBOutlet private weak var addButtonOutlet: UIButton!
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
-            viewModel.didUpdate = {
-                let indexPath = IndexPath(row: 0, section: 0)
+            viewModel.didUpdate = { [weak self] in
+                self?.tableView.reloadData()
+            }
+            viewModel.didUpdateWithIndex = { index in
+                let indexPath = IndexPath(row: index, section: 0)
                 self.tableView.insertRows(at: [indexPath], with: .bottom)
+            }
+            viewModel.showError = { [weak self] errorMessage in
+                self?.showAlert(errorMessage)
             }
         }
     }
 // MARK: - Action
     @IBAction private func addButtonAction(_ sender: Any) {
-        guard Int(yearTextField.text ?? "") != nil else {
-            self.showAlert("It is not an Integer")
-            yearTextField.addBorder()
-            return
-        }
-        guard yearTextField.text?.count == 4 else {
-            self.showAlert("Year is invalid please try again")
+        guard viewModel.validateYear(Int(yearTextField.text ?? "") ?? 0) else {
             yearTextField.addBorder()
             return
         }
         viewModel.writeData(
             title: titleTextField.text ?? "",
-            year: Int(yearTextField.text ?? "") ?? 0) { error in
-                self.showAlert(error.description)
-            }
+            year: Int(yearTextField.text ?? "") ?? 0)
     }
     @IBAction private func textDidChange(_ sender: Any) {
         if titleTextField.text == "" || yearTextField.text == "" {
@@ -61,6 +59,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.start()
     }
 }
 // MARK: - UITableViewDataSource
